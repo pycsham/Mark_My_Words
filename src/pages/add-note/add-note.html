@@ -11,6 +11,7 @@
   </ion-navbar>
 
 </ion-header>
+<ion-navbar [color]="isRecording ? 'danger' : 'primary'">
 
 
 <ion-content padding>
@@ -38,7 +39,13 @@
         <ion-card-title>
           <div>Live recording</div>
           <hr />
+          <button ion-button full (click)="getPermissions()">Get Permission</button>
+          <button ion-button full (click)="startListening()">Record</button>
+          <button ion-button full (click)="stopListening()">Stop Recording</button>
         </ion-card-title>
+        <ion-item *ngFor="let match of matches">
+          {{ match }}
+        </ion-item>
       </ion-card-content>
     </ion-card>
 </ion-content>

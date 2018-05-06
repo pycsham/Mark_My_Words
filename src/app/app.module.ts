@@ -11,6 +11,7 @@ import { NoteService } from '../providers/note-service/note-service';
 import { IonicStorageModule } from '@ionic/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewNotePage } from '../pages/view-note/view-note';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ViewNotePage } from '../pages/view-note/view-note';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NoteService
+    NoteService,
+    SpeechRecognition
   ]
 })
 export class AppModule {}
