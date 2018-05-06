@@ -45,6 +45,8 @@ var AddNotePage = /** @class */ (function () {
     AddNotePage.prototype.saveNote = function (note) {
         this.noteService.saveNote(note);
         this.navCtrl.pop();
+        console.log("hello");
+        console.log("hello");
     };
     AddNotePage.prototype.startListening = function () {
         var _this = this;
