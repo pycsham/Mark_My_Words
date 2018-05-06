@@ -1,6 +1,6 @@
 {
   "name": "markMyWords",
-  "app_id": "",
+  "app_id": "9388b0b5",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

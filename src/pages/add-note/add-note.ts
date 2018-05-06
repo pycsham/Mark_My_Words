@@ -37,8 +37,12 @@ export class AddNotePage {
   saveNote(note: Note){
     this.noteService.saveNote(note);
     this.navCtrl.pop();
+    console.log("hello");
+    console.log("hello");
 
   }
+
+
 
   startListening(){
     let options = {
