@@ -3,8 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NoteService } from '../../providers/note-service/note-service';
 import { Note } from '../../models/note-model'
 import { FormGroup, FormControl } from '@angular/forms';
-import { SpeechRecognition } from '@ionic-native/speech-recognition';
-import { ChangeDetectorRef } from '@angular/core';
+// import { SpeechRecognition } from '@ionic-native/speech-recognition';
+// import { ChangeDetectorRef } from '@angular/core';
 
 
 @IonicPage()
@@ -23,9 +23,9 @@ export class AddNotePage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private noteService: NoteService,
-    private SpeechRecognition: SpeechRecognition,
-    private ChangeDetectorRef: ChangeDetectorRef
+    private noteService: NoteService
+    // private SpeechRecognition: SpeechRecognition,
+    // private ChangeDetectorRef: ChangeDetectorRef
   ) {
     this.formGroup = new FormGroup({
       title: new FormControl(),
@@ -44,32 +44,32 @@ export class AddNotePage {
 
 
 
-  startListening(){
-    let options = {
-      language: 'en-US',
-      showPartial: true
-    }
-    this.SpeechRecognition.startListening(options).subscribe(matches => {
-      this.matches = matches;
-      this.ChangeDetectorRef.detectChanges();
-    });
-    this.isRecording = true;
-  }
-
-  stopListening(){
-    this.SpeechRecognition.stopListening().then(() => {
-      this.isRecording = false;
-    });
-  }
-
-  getPermission(){
-    this.SpeechRecognition.hasPermission()
-    .then((hasPermission: boolean) => {
-      if (!hasPermission) {
-        this.SpeechRecognition.requestPermission();
-      }
-    })
-  }
+  // startListening(){
+  //   let options = {
+  //     language: 'en-US',
+  //     showPartial: true
+  //   }
+  //   this.SpeechRecognition.startListening(options).subscribe(matches => {
+  //     this.matches = matches;
+  //     this.ChangeDetectorRef.detectChanges();
+  //   });
+  //   this.isRecording = true;
+  // }
+  //
+  // stopListening(){
+  //   this.SpeechRecognition.stopListening().then(() => {
+  //     this.isRecording = false;
+  //   });
+  // }
+  //
+  // getPermissions(){
+  //   this.SpeechRecognition.hasPermission()
+  //   .then((hasPermission: boolean) => {
+  //     if (!hasPermission) {
+  //       this.SpeechRecognition.requestPermission();
+  //     }
+  //   })
+  // }
 
 
 
